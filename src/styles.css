@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
+/* see more available themes at https://material.angular.io/guide/theming  */
+
+html,
+body {
+    height: 100%;    
+}
+
+body {
+    margin: 0;
+}
+/* nav a:visited, a:link {
+    color: #5329c5;
+}
+nav a:hover {
+    color: #039be5;
+    background-color: rgb(179, 216, 179);
+}
+
+nav a.active {
+    color: #039be5;
+} */

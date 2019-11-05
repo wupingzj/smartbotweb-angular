@@ -1,0 +1,69 @@
+<div>
+
+  <!-- <ul class="intents">
+      <li *ngFor="let intent of intents" (click)="onSelect(intent)" (mouseover)="changeText=true"
+        (mouseout)="changeText=false">
+        <span class="badge">{{intent.name}}</span>
+        <span class="badge">{{intent.phrases}}</span>
+      </li>
+    </ul> -->
+
+  <!-- intent search bar-->
+
+  <div style="width: 80%; padding: 15px">
+    <!-- <div style="text-align:left;width:500px; padding-left: 15px"> -->
+    <h2>intents</h2>
+    <table *ngIf="intents">
+      <thead>
+        <tr>
+          <th class="phrases">phrases</th>
+          <th class="intent">intent</th>
+          <th class="action">responses</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let intent of intents;" (mouseover)="highlightRow(intent)"
+          [ngClass]="{'highlight' : intent.name == hoveredIntentName}">
+
+          <td>
+            <!-- expandable phrases -->
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  {{intent.phrases[0]}}
+                </mat-panel-title>
+                <mat-panel-description>
+                  <!-- listllistlst -->
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+
+              <ng-template matExpansionPanelContent>
+                <!-- Lazy rendering. Some deferred content -->
+                <mat-list dense>
+                  <mat-list-item *ngFor="let phrase of intent.phrases; index as i;">
+                    <span class="phrases"> {{phrase}} </span>
+                  </mat-list-item>
+                </mat-list>
+
+                <!-- <button type="button" aria-label="Change phrases" (click)="changePhrases(intent)"
+                  matTooltip="Change phrases">
+                  Change
+                </button> -->
+                <mat-action-row>
+                  <button mat-button (click)="changePhrases(intent)">Change</button>
+                </mat-action-row>
+              </ng-template>
+
+            </mat-expansion-panel>
+          </td>
+
+          <td>{{intent.name}}</td>
+
+          <td>
+            <app-intent-action *ngIf="intent.name == hoveredIntentName" [intent]="intent"></app-intent-action>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

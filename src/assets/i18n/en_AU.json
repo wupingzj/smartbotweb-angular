@@ -1,0 +1,26 @@
+{
+  "SmartBot" : "Smart Bot !!!",
+	"FreeCancellationDesc": "before {{value}}",
+	"AUD":"AUD",
+	"PRICESHOW":"CNY {{value}}",
+	"AUDPRICE":"AUD {{value}}",
+	"CNYPRICE":"CNY {{value}}",
+    "NIGHTS": {
+      "1": "{{value}} Night",
+      "OTHER":"{{value}} Nights"
+    },    
+	"ROOMSELECT": {
+      "1": "{{value}} Room",
+      "OTHER":"{{value}} Rooms"
+    },
+    "ADULTS":{
+    	"1":"{{value}} Adult",
+    	"OTHER":"{{value}} Adults"
+    },
+    "CHILDREN":{
+    	"1":"{{value}} Child",
+    	"OTHER":"{{value}} Children"
+    },
+    "Cancellation Policy":"  ",
+    "Breakfast hidden":" "
+}

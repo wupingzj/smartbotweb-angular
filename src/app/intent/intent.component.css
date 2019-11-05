@@ -1,0 +1,45 @@
+table {
+    table-layout: auto;
+    width: 100%;
+    font: 14px Verdana;
+}
+
+table {
+    border: solid 1px #999999;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+th {
+    font-weight: bold;
+    height: 40px;
+    padding: 2px 10px;
+}
+
+/* th .phrases {
+    width: 90%;
+}
+
+th .intent {
+    width: 10%;
+}
+
+th .action {
+    width: 30%;
+} */
+
+/* tr:hover {
+    background-color:  rgb(232, 246, 247);
+} */
+
+td {
+    padding: 2px 10px;
+}
+
+td .phrases {
+    width: 50%;
+    color: blue;
+    font-size: small;
+    text-align: left;
+}
+

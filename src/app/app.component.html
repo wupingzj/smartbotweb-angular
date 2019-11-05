@@ -1,0 +1,39 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<app-main-nav>
+  <div *ngIf=isHomePage()>
+    <!-- <button mat-raised-button color="accent">Click Me</button> -->
+    <div style="text-align:center">
+      <h1>
+        {{name}},
+        <div>{{ slogan }}</div>
+
+        
+      </h1>
+    </div>
+
+    <div class="promotion">{{ promotion }}</div>
+  </div>
+
+  <router-outlet></router-outlet>
+  <!-- Routed views go here -->
+
+</app-main-nav>
+
+<!-- <nav>
+  <div>
+      <a [routerLink]="['/']" routerLinkActive="active" >Home</a>
+  </div>
+  
+  <div>
+      <a [routerLink]="['/intents']" routerLinkActive="active" >Intents</a>
+  </div>
+
+  <div>
+      <a [routerLink]="['/departments']" routerLinkActive="active" >departments</a>
+  </div>
+  
+  <div>
+      <a [routerLink]="['/employees']" routerLinkActive="active" >Employees</a>
+  </div>
+</nav> -->
