@@ -23,13 +23,13 @@ describe('AppComponent', () => {
   it(`should have as slogan 'smart bot'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.slogan).toEqual('your secret weapon for building smart bot!');
+    expect(app.slogan).toEqual('your secret weapon for building a smart bot!');
   });
 
   it('should render title in a h1 tag', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('your secret weapon for building smart bot!');
+    expect(compiled.querySelector('h1').textContent).toContain('your secret weapon for building a smart bot!');
   });
 });

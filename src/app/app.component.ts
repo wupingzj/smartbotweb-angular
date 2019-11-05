@@ -9,7 +9,7 @@ import { Location } from '@angular/common';
 })
 export class AppComponent {
   public name = 'SmartBot';
-  private slogan = 'your secret weapon for building smart bot!';
+  private slogan = 'your secret weapon for building a smart bot!';
   private promotion = 'Try free for 30 days';
 
   constructor(private location: Location, private router: Router) {}
