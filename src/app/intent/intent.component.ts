@@ -14,10 +14,10 @@ import {
   templateUrl: './intent.component.html',
   styleUrls: ['./intent.component.css']
 })
+
 export class IntentComponent implements OnInit {
   private intents = [];
   private hoveredIntentName: string;
-  private currentIntent = 'Welcome Test Intent';
 
   constructor(private intentService: IntentService, private router: Router) { }
 
@@ -30,7 +30,7 @@ export class IntentComponent implements OnInit {
   }
 
   changePhrases(intent: Intent): boolean {
-    alert('Change intent' + intent.name);
+    // alert('Change intent' + intent.name);
     // Set our navigation extras object
     // that contains our global query params and fragment
     const navigationExtras: NavigationExtras = {

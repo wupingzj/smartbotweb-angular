@@ -1,7 +1,14 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Intent } from '../intent-service/intent.model';
-import { interval, from } from 'rxjs';
-import { take } from 'rxjs/operators';
+// import { interval, from } from 'rxjs';
+// import { take } from 'rxjs/operators';
+import {
+  CanActivate, Router,
+  ActivatedRouteSnapshot,
+  RouterStateSnapshot,
+  CanActivateChild,
+  NavigationExtras
+} from '@angular/router';
 
 @Component({
   selector: 'app-intent-action',
@@ -11,28 +18,30 @@ import { take } from 'rxjs/operators';
 export class IntentActionComponent implements OnInit {
   @Input() intent: Intent;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
-  detect() {
-    alert('detect intent=' + this.intent.name);
-    console.log('route to intent detection page=' + this.intent.name);
-  }
-
   delete() {
-    alert('delete intent=' + this.intent.name);
+    // alert('delete intent=' + this.intent.name);
     console.log('make a call to backend service to delete intent=' + this.intent.name);
   }
 
   manageResponses() {
-    // alert('respond intent=' + this.intent.name);
-    alert('manage responses for intent=' + this.intent.name);
+    // alert('manage responses for intent=' + this.intent.name);
+    const navigationExtras: NavigationExtras = {
+      queryParams: { intent: this.intent.name },
+      fragment: 'anchor'
+    };
+
+    // Navigate to the phrase page with extras
+    this.router.navigate(['/intentResponses'], navigationExtras);
+    return false;
 
     // test observable
-    const supplier = interval(200).pipe(take(3)); // Observable, take first 3
-    const consumer = supplier.subscribe( (v: any) => console.log('Subscribed value:' + v)); // Subscriber
+    // const supplier = interval(200).pipe(take(3)); // Observable, take first 3
+    // const consumer = supplier.subscribe( (v: any) => console.log('Subscribed value:' + v)); // Subscriber
     // setTimeout(()=> consumer.unsubscribe(), 2000);
   }
 }
