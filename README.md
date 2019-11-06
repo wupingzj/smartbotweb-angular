@@ -1,4 +1,4 @@
-# SAAS tool to manage a smart chatbot
+# SAAS tool to create a smart chatbot
 
 This project aims to create a web tool for user to create a chatbot with smarts instead of a dumb chatbot.
 
