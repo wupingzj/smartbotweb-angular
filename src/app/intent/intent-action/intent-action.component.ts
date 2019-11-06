@@ -24,7 +24,7 @@ export class IntentActionComponent implements OnInit {
   }
 
   delete() {
-    // alert('delete intent=' + this.intent.name);
+    alert('make a call to backend service to delete intent=' + this.intent.name);
     console.log('make a call to backend service to delete intent=' + this.intent.name);
   }
 

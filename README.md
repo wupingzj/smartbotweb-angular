@@ -4,7 +4,13 @@ This project aims to create a web tool for user to create a chatbot with smarts 
 
 Angular Material is used as the main UI compenent library in this project.
 
-This project demonstrates the routing, UI component composing, service call to backend.
+This project demonstrates 
+- routing/navigation
+- query parameter passing
+- parent/child page data passing
+- UI component composing
+- service call to backend
+- usage of Angular Material
 
 `To Do`: add a screenshot here
 
