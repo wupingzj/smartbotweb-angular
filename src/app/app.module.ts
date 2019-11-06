@@ -6,6 +6,7 @@ import 'hammerjs';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { IntentComponent } from './intent/intent.component';
+import { ResponseComponent } from './response/response.component';
 import { GlobalHeaderComponent } from './shared/global-header/global-header.component';
 import { SharedModule } from './shared/shared.module';
 import { TranslateService, TranslateModule, TranslateLoader } from '@ngx-translate/core';
@@ -16,9 +17,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { IntentActionComponent } from './intent/intent-action/intent-action.component';
 import { MaterialModule } from './shared/material/material.module';
-
-// import { DepartmentListComponent } from './department-list/department-list.component';
-// import { EmployeeListComponent } from './employee-list/employee-list.component';
+import { UtteranceComponent } from './utterance/utterance.component';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json');
@@ -28,17 +27,14 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
   declarations: [
     AppComponent,
     IntentComponent,
+    ResponseComponent,
 
-    // use routingComponents instead
-    // DepartmentListComponent,
-    // EmployeeListComponent
     routingComponents,
-
     GlobalHeaderComponent,
-
     MainNavComponent,
-
-    IntentActionComponent
+    IntentActionComponent,
+    ResponseComponent,
+    UtteranceComponent
   ],
   imports: [
     BrowserModule,

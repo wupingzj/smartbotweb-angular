@@ -50,7 +50,11 @@
                   Change
                 </button> -->
                 <mat-action-row>
-                  <button mat-button (click)="changePhrases(intent)">Change</button>
+                  <!-- <a [routerLink]="['/intentDetection']" routerLinkActive="active" >Change</a> -->
+                  <button mat-button [routerLink]="['/home']" (click)="changePhrases(intent)">Change</button>
+                  <!-- <button mat-button [routerLink]="['/intentDetection']" [queryParams]="{intent: 'xxx'}" [fragment]="yyy">Change</button> -->
+                  
+
                 </mat-action-row>
               </ng-template>
 

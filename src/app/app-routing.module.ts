@@ -1,14 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { DepartmentListComponent } from './department-list/department-list.component';
-import { EmployeeListComponent } from './employee-list/employee-list.component';
+
+
 import { IntentComponent } from './intent/intent.component';
+import { UtteranceComponent } from './utterance/utterance.component';
+import { ResponseComponent } from './response/response.component';
 
 const routes: Routes = [
-  {path: 'departments', component: DepartmentListComponent},
-  {path : 'employees', component: EmployeeListComponent},
-  {path : 'intents', component: IntentComponent},
-  {path : 'responses', component: IntentComponent}
+  { path: 'intents', component: IntentComponent },
+  { path: 'intentDetection', component: UtteranceComponent },
+  { path: 'intentResponses', component: ResponseComponent }
 ];
 
 @NgModule({
@@ -16,4 +17,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents = [IntentComponent, EmployeeListComponent, DepartmentListComponent];
+export const routingComponents = [IntentComponent, ResponseComponent];

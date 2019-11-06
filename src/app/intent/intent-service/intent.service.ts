@@ -13,7 +13,8 @@ export const INTENTS_MOCK: Intent[] = [
         'hi',
         'Hi there',
         'hello'
-      ]
+      ],
+    responses: []
   },
   {
     name: 'Departure Airport',
@@ -22,7 +23,8 @@ export const INTENTS_MOCK: Intent[] = [
         'I am departing from Sydney',
         'Departing from Melbourne',
         'from Brisbane'
-      ]
+      ],
+    responses: []
   },
 ];
 

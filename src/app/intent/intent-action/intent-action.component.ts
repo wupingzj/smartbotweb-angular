@@ -16,25 +16,19 @@ export class IntentActionComponent implements OnInit {
   ngOnInit() {
   }
 
-  // detect(intent: Intent) {
-  //   alert(intent);
-  //   alert(this.intent2.name);
-  //   console.log('detect intent=' + intent.name);
-  // }
-
   detect() {
     alert('detect intent=' + this.intent.name);
-    console.log('detect intent=' + this.intent.name);
+    console.log('route to intent detection page=' + this.intent.name);
   }
 
   delete() {
     alert('delete intent=' + this.intent.name);
-    console.log('delete intent=' + this.intent.name);
+    console.log('make a call to backend service to delete intent=' + this.intent.name);
   }
 
-  respond() {
+  manageResponses() {
     // alert('respond intent=' + this.intent.name);
-    console.log('respond intent=' + this.intent.name);
+    alert('manage responses for intent=' + this.intent.name);
 
     // test observable
     const supplier = interval(200).pipe(take(3)); // Observable, take first 3
