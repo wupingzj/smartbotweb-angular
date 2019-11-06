@@ -10,7 +10,7 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('Welcome to SmartBotWeb!');
+    expect(page.getTitleText()).toContain('your secret weapon for building a smart bot!');
   });
 
   afterEach(async () => {

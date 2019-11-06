@@ -31,8 +31,13 @@ npm install
 
 ```
 ng test
-```
 
+```
+- End-to-end test
+
+```
+ng e2e
+```
 - Run
 
 ```
