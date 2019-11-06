@@ -27,6 +27,12 @@ git clone --depth=1 https://github.com/wupingzj/smartbotweb-angular.git
 cd smartbotweb-angular
 npm install
 ```
+- Test
+
+```
+ng test
+```
+
 - Run
 
 ```
