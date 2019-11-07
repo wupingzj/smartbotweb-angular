@@ -22,7 +22,20 @@ export class IntentComponent implements OnInit {
   constructor(private intentService: IntentService, private router: Router) { }
 
   ngOnInit() {
-    this.intents = this.intentService.getIntents();
+    // use mock data
+    // this.intents = this.intentService.getIntentsMock();
+
+    // get data from server
+    this.intentService.getIntentsFromServer0()
+    .subscribe(
+      // data => this.postPosts = JSON.stringify(data),
+      data => {
+        this.intents = data;
+        // alert('data=' + JSON.stringify(data));
+       },
+      error => console.log('Post posts finished'),
+      () => console.log('Post posts finished')
+    );
   }
 
   highlightRow(intent: Intent) {

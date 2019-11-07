@@ -8,11 +8,35 @@
         ]
     },
     {
-        "name": "Departure Airport",
+        "name": "Book Hotel",
         "phrases": [
-            "I am departing from Sydney",
-            "Departing from Melbourne",
-            "from Brisbane"
+            "I would like to book hotel",
+            "Check out hotel in Sydney",
+            "Can you help me with hotel booking?"
+        ]
+    },
+    {
+        "name": "City",
+        "phrases": [
+            "I will arrive at Sydney",
+            "Sydney please",
+            "visit Brisbane"
+        ]
+    },
+    {
+        "name": "fromDate",
+        "phrases": [
+            "I am going from 15 Oct",
+            "15th Oct",
+            "from Brisbane on 15 October"
+        ]
+    },
+    {
+        "name": "toDate",
+        "phrases": [
+            "I am going from 15 Oct",
+            "15th Oct",
+            "from Brisbane on 15 October"
         ]
     }
 ]
