@@ -10,13 +10,13 @@
     {
         "name": "Book Hotel",
         "phrases": [
-            "I would like to book hotel",
+            "I would like to book a hotel for my family",
             "Check out hotel in Sydney",
             "Can you help me with hotel booking?"
         ]
     },
     {
-        "name": "City",
+        "name": "Arrival City",
         "phrases": [
             "I will arrive at Sydney",
             "Sydney please",
@@ -24,19 +24,32 @@
         ]
     },
     {
-        "name": "fromDate",
+        "name": "Arrival Date",
         "phrases": [
-            "I am going from 15 Oct",
+            "I am arriving on 15 Oct",
+            "My family will get there on 15 Oct",
             "15th Oct",
             "from Brisbane on 15 October"
         ]
     },
     {
-        "name": "toDate",
+        "name": "Depature Date",
         "phrases": [
+            "I will be leaving on 18th September",
             "I am going from 15 Oct",
             "15th Oct",
             "from Brisbane on 15 October"
+            
+        ]
+    },
+    {
+        "name": "Budget",
+        "phrases": [
+            "5 star is good for my family",
+            "My budget is a bit tight",
+            "$200-300 would be great",
+            "I am on budget",
+            "luxury please"
         ]
     }
 ]
