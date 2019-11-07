@@ -32,8 +32,8 @@ export class IntentComponent implements OnInit {
         this.intents = data;
         // alert('data=' + JSON.stringify(data));
        },
-      error => console.log('Post posts finished'),
-      () => console.log('Post posts finished')
+      error => console.log('getntents failed' + error),
+      () => console.log('getntents finished')
     );
   }
 
