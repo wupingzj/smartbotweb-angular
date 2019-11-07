@@ -28,7 +28,6 @@ export class IntentComponent implements OnInit {
     // get data from server
     this.intentService.getIntentsFromServer0()
     .subscribe(
-      // data => this.postPosts = JSON.stringify(data),
       data => {
         this.intents = data;
         // alert('data=' + JSON.stringify(data));
