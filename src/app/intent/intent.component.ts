@@ -8,6 +8,7 @@ import {
   CanActivateChild,
   NavigationExtras
 } from '@angular/router';
+import { catchError, tap, map, retry } from 'rxjs/operators';
 
 @Component({
   selector: 'app-intent',
@@ -16,25 +17,38 @@ import {
 })
 
 export class IntentComponent implements OnInit {
-  private intents = [];
+  private intents: Intent[] = [];
   private hoveredIntentName: string;
 
   constructor(private intentService: IntentService, private router: Router) { }
 
   ngOnInit() {
-    // use mock data
-    // this.intents = this.intentService.getIntentsMock();
-
     // get data from server
+    // this.intentService.getIntentsFromJsonFile()
     this.intentService.getIntentsFromServer0()
-    .subscribe(
-      data => {
-        this.intents = data;
-        // alert('data=' + JSON.stringify(data));
-       },
-      error => console.log('getntents failed' + error),
-      () => console.log('getntents finished')
-    );
+      .pipe(
+        tap(data => {
+          console.log(typeof data);
+          console.log('fetched intents', data);
+        }),
+        // retry(3),
+        // map(data => {
+        //   console.log('map data', data);
+        // }),
+        // catchError(this.handleError<any>(`get intents`, []))
+      )
+      .subscribe(
+        data => {
+          // console.log('get intents =' + data);
+          this.intents = data;
+        },
+        error => {
+          console.error('get intents failed', error);
+        },
+        () => {
+          console.log('get intents finished');
+        }
+      );
   }
 
   highlightRow(intent: Intent) {
