@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, isDevMode } from '@angular/core';
 import { Intent } from './intent.model';
 import { Observable, from, of, throwError } from 'rxjs';
 import { HttpClientModule, HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
@@ -20,11 +20,21 @@ export class IntentService {
 
   constructor(private http: HttpClient) { }
 
-  getIntentsFromJsonFile(): Observable<Intent[]> {
+  getIntents(): Observable<Intent[]> {
+    if (isDevMode()) {
+      // get from mock json file
+      return this.getIntentsFromMockJsonFile();
+    } else {
+      // get from production server
+      return this.getIntentsFromServer();
+    }
+  }
+
+  private getIntentsFromMockJsonFile(): Observable<Intent[]> {
     return this.http.get<Intent[]>('assets/intents.json');
   }
 
-  getIntentsFromServer0(): Observable<Intent[]> {
+  private getIntentsFromServer(): Observable<Intent[]> {
     const baseUrl = environment.serverURL;
 
     const headers = new Headers({ 'Content-Type': 'application/json' });

@@ -44,7 +44,19 @@ ng e2e
 ng serve --open
 ```
 
-The web site page will automatically launch at http://localhost:4200/.
+Note: The web site page will automatically launch at http://localhost:4200/.
+The web site by dafult gets the list of intents from the embedded [mock intents.json](https://github.com/wupingzj/smartbotweb-angular/blob/master/src/assets/intents.json) file to run standalone without dependency on a server.
+
+If you wish to get real list of intents from a server, please change the value of production field to be true in [environment](https://github.com/wupingzj/smartbotweb-angular/blob/master/src/environments/environment.ts) file. For example:
+
+```
+export const environment = {
+  production: true,
+  serverURL: 'http://MyProductionServer.com:80'
+};
+```
+I will push the server project to Github soon later.
+
 
 ## Contact
 Email: KevinPingSydney@gmail.com

@@ -25,7 +25,7 @@ export class IntentComponent implements OnInit {
   ngOnInit() {
     // get data from server
     // this.intentService.getIntentsFromJsonFile()
-    this.intentService.getIntentsFromServer0()
+    this.intentService.getIntents()
       .pipe(
         tap(data => {
           console.log(typeof data);
