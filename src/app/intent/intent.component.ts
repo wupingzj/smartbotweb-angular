@@ -9,6 +9,8 @@ import {
   NavigationExtras
 } from '@angular/router';
 import { catchError, tap, map, retry } from 'rxjs/operators';
+import { HttpErrorResponse } from '@angular/common/http';
+import { throwError } from 'rxjs';
 
 @Component({
   selector: 'app-intent',
@@ -24,30 +26,14 @@ export class IntentComponent implements OnInit {
 
   ngOnInit() {
     // get data from server
-    // this.intentService.getIntentsFromJsonFile()
     this.intentService.getIntents()
-      .pipe(
-        tap(data => {
-          console.log(typeof data);
-          console.log('fetched intents', data);
-        }),
-        // retry(3),
-        // map(data => {
-        //   console.log('map data', data);
-        // }),
-        // catchError(this.handleError<any>(`get intents`, []))
-      )
       .subscribe(
         data => {
-          // console.log('get intents =' + data);
           this.intents = data;
         },
-        error => {
-          console.error('get intents failed', error);
-        },
-        () => {
-          console.log('get intents finished');
-        }
+        // error has already been handled by service. Here error handling is unneccessry
+        error => console.error('get intents failed:', error),
+        () => console.log('get intents finished')
       );
   }
 
@@ -67,5 +53,19 @@ export class IntentComponent implements OnInit {
     // Navigate to the phrase page with extras
     this.router.navigate(['/intentDetection'], navigationExtras);
     return false;
+  }
+
+  private testUpdatePhrase() {
+    const intent: Intent = new Intent('Welcome', ['hello', 'test phrase1'], null);
+
+    this.intentService.updatePhrase(intent)
+      .subscribe(
+        data => {
+          console.log('intent phrase updated');
+        },
+        // error has already been handled by service. Here error handling is unneccessry
+        error => console.error('update intent phrase failed:', error),
+        () => console.log('update intent phrase finished')
+      );
   }
 }
